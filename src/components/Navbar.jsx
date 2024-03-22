@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <div className="flex row border border-2 border-black justify-between items-center ">
       <div>
-        <img src={Logo} alt="" srcset="" style={{ height: "50px" }} />
+        <img src={Logo} alt="" srcset="" style={{ height: "70px" }} />
       </div>
       <div>
         <svg

@@ -1,14 +1,17 @@
 import React from "react";
-import Github from "../assets/github.png";
+import "../css/Style.css";
 
 function Home() {
+  let colors = {
+    bgColor: "#b2bec3",
+  };
   let socail = [
-    { name: "facebook", logo: "f", link: "" },
-    { name: "Linkedin", logo: "L", link: "" },
-    { name: "Twitter", logo: "T", link: "" },
+    { name: "facebook", logo: "src/assets/facebook.png", link: "" },
+    { name: "Linkedin", logo: "src/assets/linkedin.png", link: "" },
+    { name: "Instagram", logo: "src/assets/instagram.png", link: "" },
     {
       name: "Github",
-      logo: "",
+      logo: "src/assets/github.png",
       link: "",
     },
   ];
@@ -19,7 +22,8 @@ function Home() {
         style={{
           display: "flex",
           flexDirection: "column",
-          height: "80vh",
+          height: "85vh",
+          padding: "20px 0",
           width: "20vw",
           border: "2px solid blue",
         }}
@@ -41,7 +45,7 @@ function Home() {
             width={"150px"}
             style={{ border: "2px solid green" }}
           />
-          <h1>Ckryo Action</h1>
+          <h1 className="paprika-regular text-4xl font-bold">Ckryo Action</h1>
         </div>
         <div
           style={{
@@ -51,14 +55,17 @@ function Home() {
             flexDirection: "column",
           }}
         >
-          <h6 className="text-center">FullStack Developer</h6>
+          <h6 className="text-center text-  xl font-bold">
+            FullStack Developer
+          </h6>
           <div
             style={{
               width: "80%",
-              border: "2px solid red",
+              // border: "2px solid red",
               flexDirection: "row",
               display: "flex",
               margin: "0 auto",
+              gap: 10,
             }}
           >
             {socail.map((item) => (
@@ -67,24 +74,40 @@ function Home() {
                   flexGrow: 1,
                   // width: "50px",
                   height: "50px",
-                  border: "2px solid blue",
+                  // border: "2px solid blue",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  backgroundColor: colors.bgColor,
+                  borderRadius: "8px",
                 }}
-              ></div>
+              >
+                <img
+                  src={item.logo}
+                  alt="social"
+                  style={{ padding: "12px" }}
+                  srcset=""
+                />
+              </div>
             ))}
           </div>
         </div>
-        <div style={{ flexGrow: 3, border: "2px solid red" }} className="mx-5 ">
+        <div
+          style={{
+            flexGrow: 3,
+            //  border: "2px solid red"
+          }}
+          className="mx-5 "
+        >
           <div
-            className=" border-black border-2 h-full"
+            className="h-full font-bold"
             style={{
               display: "flex",
               flexDirection: "column",
-              padding: "30px",
-              backgroundColor: "#b2bec3",
+              padding: "0 30px",
+              backgroundColor: colors.bgColor,
               borderRadius: "10px",
+              fontSize: "12px",
             }}
           >
             <div className="flex row" style={{ flexGrow: 1, gap: 10 }}>
@@ -177,6 +200,9 @@ function Home() {
               <div
                 style={{
                   flexGrow: 4,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
                 }}
               >
                 <div>Location</div>
@@ -184,17 +210,20 @@ function Home() {
               </div>
             </div>
             <div
-              className="flex row justify-center items-center"
-              style={{ flexGrow: 1, border: "2px solid black" }}
+              className="flex row justify-around items-center"
+              style={{
+                flexGrow: 1,
+                //  border: "2px solid black"
+              }}
             >
-              <div className="flex row">
+              <div className="flex row text-lg">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="1.5"
+                  stroke-width="3"
                   stroke="currentColor"
-                  class="w-6 h-6"
+                  class="w-6 h-6 "
                 >
                   <path
                     stroke-linecap="round"

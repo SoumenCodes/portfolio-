@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Paprika&display=swap");
+
+.paprika-regular {
+  font-family: "Paprika", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  font-family: "Paprika", system-ui; /* Apply the font to the body */
+}
