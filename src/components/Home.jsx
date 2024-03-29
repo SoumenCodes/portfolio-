@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Style.css";
+import { NavLink, Outlet } from "react-router-dom";
 
 function Home() {
   let colors = {
@@ -13,6 +14,24 @@ function Home() {
       name: "Github",
       logo: "src/assets/github.png",
       link: "",
+    },
+  ];
+  let menu = [
+    {
+      option: "Home",
+      logo: "",
+    },
+    {
+      option: "Resume",
+      logo: "",
+    },
+    {
+      option: "Work",
+      logo: "",
+    },
+    {
+      option: "Conatact",
+      logo: "",
     },
   ];
 
@@ -86,7 +105,7 @@ function Home() {
                 <img
                   src={item.logo}
                   alt="social"
-                  style={{ padding: "12px" }}
+                  style={{ padding: "15px" }}
                   srcSet=""
                 />
               </div>
@@ -96,7 +115,8 @@ function Home() {
         <div
           style={{
             flexGrow: 3,
-            //  border: "2px solid red"
+            border: "2px solid red",
+            margin: "20px",
           }}
           className="mx-5 book"
         >
@@ -225,12 +245,38 @@ function Home() {
             </div>
           </div>
           <div class="cover">
-            <p>Hover me To get my info</p>
+            <p style={{ fontSize: 18 }}>Hover me To get my info</p>
           </div>
         </div>
       </div>
       <div className="border-2 border-blue-700" style={{ width: "72vw" }}>
-        Right
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            margin: "20px",
+            border: "2px solid green",
+            padding: "20px",
+            gap: 20,
+          }}
+        >
+          {menu.map(({ option }) => (
+            <NavLink
+              to={`Soumen/${option}`}
+              style={{
+                border: "2px solid black",
+                width: "80px",
+                height: "80px",
+              }}
+            >
+              {option}
+            </NavLink>
+          ))}
+        </div>
+        <div style={{ border: "2px solid blue" }}>
+          <Outlet />
+        </div>
       </div>
     </div>
   );
